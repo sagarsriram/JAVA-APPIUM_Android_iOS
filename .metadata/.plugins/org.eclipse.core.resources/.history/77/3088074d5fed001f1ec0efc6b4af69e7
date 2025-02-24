@@ -1,0 +1,29 @@
+package org.demo.mobileappautomation;
+
+import java.io.File;
+
+import org.testng.annotations.Test;
+
+import io.appium.java_client.service.local.AppiumDriverLocalService;
+import io.appium.java_client.service.local.AppiumServiceBuilder;
+
+
+public class AppTest
+{
+    @Test
+    public void shouldAnswerWithTrue()
+    {
+        
+        System.out.println("working!!!");
+    
+    
+    AppiumDriverLocalService service = new AppiumServiceBuilder()
+    	    .withAppiumJS(new File("C:\\Users\\SagarSriram\\AppData\\Roaming\\npm\\node_modules\\appium\\build\\lib\\main.js"))
+    	    .withIPAddress("127.0.0.1")
+    	    .usingPort(4723)
+    	    .build();
+    service.start();
+    }
+    
+    
+}

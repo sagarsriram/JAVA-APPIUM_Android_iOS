@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.testng.annotations.BeforeMethod"/>
+<fullyQualifiedTypeName name="io.appium.java_client.android.Activity"/>
+<fullyQualifiedTypeName name="org.testng.annotations.Test"/>
+<fullyQualifiedTypeName name="org.testng.AssertJUnit"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.By"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebDriver.Options"/>
+<fullyQualifiedTypeName name="io.appium.java_client.AppiumBy"/>
+<fullyQualifiedTypeName name="org.demo.mobileappautomation.AndroidBaseTest"/>
+<fullyQualifiedTypeName name="io.appium.java_client.service.local.AppiumDriverLocalService"/>
+<fullyQualifiedTypeName name="io.appium.java_client.service.local.AppiumServiceBuilder"/>
+<fullyQualifiedTypeName name="java.io.File"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.JavascriptExecutor"/>
+<fullyQualifiedTypeName name="com.google.common.collect.ImmutableMap"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.remote.RemoteWebElement"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.WebElement"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.support.PageFactory"/>
+<fullyQualifiedTypeName name="io.appium.java_client.pagefactory.AppiumFieldDecorator"/>
+<fullyQualifiedTypeName name="io.appium.java_client.pagefactory.AndroidFindBy"/>
+<fullyQualifiedTypeName name="io.appium.java_client.android.AndroidDriver"/>
+<fullyQualifiedTypeName name="org.demo.utils.AndroidActions"/>
+<fullyQualifiedTypeName name="org.demo.pageobjects.android.FormPage"/>
+</qualifiedTypeNameHistroy>

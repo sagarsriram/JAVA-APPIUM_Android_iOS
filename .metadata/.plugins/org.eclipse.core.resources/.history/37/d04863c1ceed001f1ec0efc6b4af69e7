@@ -1,0 +1,64 @@
+package org.demo.pageobjects.android;
+
+import org.demo.utils.AndroidActions;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.PageFactory;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.pagefactory.AndroidFindBy;
+import io.appium.java_client.pagefactory.AppiumFieldDecorator;
+import io.appium.java_client.pagefactory.iOSBy;
+
+public class FormPage extends AndroidActions {
+
+	AndroidActions action;
+	AndroidDriver driver;
+	public FormPage(AndroidDriver driver) {
+		super(driver);
+		this.driver = driver;
+		PageFactory.initElements(new AppiumFieldDecorator(driver), this);
+	}
+
+	//driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Rahul Shetty");
+	@AndroidFindBy(id ="com.androidsample.generalstore:id/nameField")
+	private WebElement nameField;
+
+	//driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
+	@AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Female']")
+	private WebElement femaleOption;
+	
+	//driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
+		@AndroidFindBy(xpath = "//android.widget.RadioButton[@text='Male']")
+		private WebElement maleOption;
+
+//		driver.findElement(By.id("android:id/text1")).click();
+//		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Argentina\"));"));
+//		driver.findElement(By.xpath("//android.widget.TextView[@text='Argentina']")).click();
+		
+		@AndroidFindBy(id = "android:id/text1")
+		private WebElement clickDropDown;
+		
+		
+		@AndroidFindBy(xpath ="//android.widget.TextView[@text='Argentina']" )
+		private WebElement selectCountryName;
+		
+	public void setNameField(String name) {
+		nameField.sendKeys(name);
+		driver.hideKeyboard();
+	}
+	public void setGender(String gender) {
+		if(gender.contains("male")) {
+			maleOption.click();
+		}else {
+			femaleOption.click();
+		}
+	}
+	public void selectCountry(String CountryName) {
+		clickDropDown.click();
+		action.scrollToText(CountryName);
+		se
+		
+	}
+}

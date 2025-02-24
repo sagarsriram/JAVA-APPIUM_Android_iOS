@@ -1,0 +1,72 @@
+package org.demo.mobileappautomation;
+
+import java.util.HashMap;
+import java.util.Map;
+
+import org.demo.pageobjects.android.FormPage;
+import org.openqa.selenium.By;
+import org.testng.AssertJUnit;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
+
+import io.appium.java_client.AppiumBy;
+import io.appium.java_client.android.Activity;
+
+public class ecommercetest extends AndroidBaseTest {
+
+	
+	@BeforeMethod
+	public void preSetup()
+	{
+		//screen to home page
+		Activity activity = new Activity("com.androidsample.generalstore", "com.androidsample.generalstore.MainActivity");
+		driver.startActivity(activity);
+		
+		
+//		Map<String,Object> activity1 = new HashMap<>();
+//		activity1.put("appPackage","com.androidsample.generalstore");
+//		activity1.put("appActivity", "com.androidsample.generalstore.MainActivity");
+//		
+//		driver.executeScript("mobile: startActivity", activity1);
+		
+	}
+	
+	@Test
+
+	public void FillForm_ErrorValidation() throws InterruptedException
+	{
+		FormPage object = new FormPage(driver);
+		
+		driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Rahul Shetty");
+		driver.hideKeyboard();
+		driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
+		driver.findElement(By.id("android:id/text1")).click();
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Argentina\"));"));
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Argentina']")).click();
+		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
+		String toastMessage = driver.findElement(By.xpath("(//android.widget.Toast)[1]")).getText();
+		AssertJUnit.assertEquals(toastMessage,"Please your name");
+		
+		
+			
+	}
+	
+
+	@Test
+	public void FillForm_PositiveFlow() throws InterruptedException
+
+	
+	{
+		
+		driver.findElement(By.id("com.androidsample.generalstore:id/nameField")).sendKeys("Rahul Shetty");
+		driver.hideKeyboard();
+		driver.findElement(By.xpath("//android.widget.RadioButton[@text='Female']")).click();
+		driver.findElement(By.id("android:id/text1")).click();
+		driver.findElement(AppiumBy.androidUIAutomator("new UiScrollable(new UiSelector()).scrollIntoView(text(\"Argentina\"));"));
+		driver.findElement(By.xpath("//android.widget.TextView[@text='Argentina']")).click();
+		driver.findElement(By.id("com.androidsample.generalstore:id/btnLetsShop")).click();
+		AssertJUnit.assertTrue(driver.findElements(By.xpath("(//android.widget.Toast)[1]")).size()<1);
+		
+			
+	}
+}
