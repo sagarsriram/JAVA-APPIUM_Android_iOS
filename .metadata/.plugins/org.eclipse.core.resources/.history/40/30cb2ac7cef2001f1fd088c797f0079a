@@ -1,0 +1,5 @@
+package org.demo.mobileappautomation;
+
+public class IOSBaseTest {
+
+}
