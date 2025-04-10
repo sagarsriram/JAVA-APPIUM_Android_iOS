@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Test Suite">
+    <listeners>
+      <listener class-name="org.openlane.autohawk.testutils.Listeners"></listener>
+    </listeners>
+    <test name="demo">
+        <classes>
+            <class name="org.openlane.autohawk.testcases.HomeTest">
+                <methods>
+
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
